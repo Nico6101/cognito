@@ -11,8 +11,8 @@ module.exports.authenticate_handler = (event,context,callback) =>
 
     var poolData = 
     {
-        UserPoolId : 'ap-south-1_cwBC09n16',
-        ClientId : '7b1aihqtga5b9bg6487bnjeoea'
+        UserPoolId : 'your-user-pool-id',
+        ClientId : 'your-client-id'
     };
       
     var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
