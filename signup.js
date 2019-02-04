@@ -9,8 +9,8 @@ module.exports.handler = async (event, context, callback) =>
     console.log(event);
     
     var poolData = {
-        UserPoolId : 'ap-south-1_cwBC09n16',
-        ClientId : '7b1aihqtga5b9bg6487bnjeoea'
+        UserPoolId : 'your-user-pool-id',
+        ClientId : 'your-client-id'
       }
       
     var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
