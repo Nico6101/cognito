@@ -10,8 +10,8 @@ module.exports.signin_handler = (event,context,callback) =>
     console.log(event);
 
     var poolData = {
-        UserPoolId : 'ap-south-1_cwBC09n16',
-        ClientId : '7b1aihqtga5b9bg6487bnjeoea'
+        UserPoolId : 'your-user-pool-id',
+        ClientId : 'your-client-id'
       }
       
     var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
@@ -37,10 +37,10 @@ module.exports.signin_handler = (event,context,callback) =>
             AWS.config.region = 'ap-south-1';
 
             AWS.config.credentials = new AWS.CognitoIdentityCredentials({
-                IdentityPoolId : 'ap-south-1:a630b55a-ca35-4d64-9ca8-bb7293ef74d0', // your identity pool id here
+                IdentityPoolId : '****', // your identity pool id here
                 Logins : {
                     // Change the key below according to the specific region your user pool is in.
-                    'cognito-idp.ap-south-1.amazonaws.com/ap-south-1_cwBC09n16' : result.getIdToken().getJwtToken()
+                    'cognito-idp.<your-region>.amazonaws.com/<your-user-pool-id>' : result.getIdToken().getJwtToken()
                 }
             });
             console.log('Here is the id token : '+result.getIdToken().getJwtToken());
